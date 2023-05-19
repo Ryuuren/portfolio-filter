@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Filter</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="theTags">
+        <label>
+          <input type="checkbox" class="tag-checkbox show-all" value="all" /> Show All
+        </label>
+        <label>
+          <input type="checkbox" class="tag-checkbox" value="websites" />
+          Websites
+        </label>
+        <label>
+          <input type="checkbox" class="tag-checkbox" value="digital-marketing" />
+          Digital Marketing
+        </label>
+        <label> <input type="checkbox" class="tag-checkbox" value="design" /> Design </label>
+      </div>
+
+      <!-- Wrapper for conditional parent containers -->
+      <div class="conditional-parent-wrapper conditional-checkboxes-wrapper">
+        <div class="websites-checkboxes hidden">
+          <label>
+            <input type="checkbox" class="conditional-checkbox" value="ecommerce" />
+            Ecommerce
+          </label>
+          <label>
+            <input type="checkbox" class="conditional-checkbox" value="construction" />
+            Construction
+          </label>
+          <label>
+            <input type="checkbox" class="conditional-checkbox" value="automotive" />
+            Automotive
+          </label>
+        </div>
+
+        <div class="digital-marketing-checkboxes hidden">
+          <label>
+            <input type="checkbox" class="conditional-checkbox" value="seo" />
+            SEO
+          </label>
+          <label>
+            <input type="checkbox" class="conditional-checkbox" value="sem" />
+            SEM
+          </label>
+          <label>
+            <input type="checkbox" class="conditional-checkbox" value="smm" />
+            SMM
+          </label>
+        </div>
+
+        <div class="design-checkboxes hidden">
+          <label>
+            <input type="checkbox" class="conditional-checkbox" value="logos" />
+            Logos
+          </label>
+          <label>
+            <input type="checkbox" class="conditional-checkbox" value="branding" />
+            Branding
+          </label>
+          <label>
+            <input type="checkbox" class="conditional-checkbox" value="graphics" />
+            Graphics
+          </label>
+        </div>
+      </div>
+
+      <form class="form-inline">
+        <div class="form-group">
+          <label for="filterInput">Filter cards:</label>
+          <input type="text" class="form-control" id="filterInput" placeholder="filter" />
+          <button type="button" class="btn btn-clear">Clear</button>
+        </div>
+      </form>
+      <div class="card-container">
+        <div class="card" data-tags="websites digital-marketing automotive seo">
+          <h3>Client One</h3>
+          <p>Websites, Digital Marketing</p>
+        </div>
+        <div class="card" data-tags="websites digital-marketing ecommerce sem">
+          <h3>Client Two</h3>
+          <p>Websites, Digital Marketing</p>
+        </div>
+        <div
+          class="card"
+          data-tags="websites digital-marketing design construction smm logos branding"
+        >
+          <h3>Client Three</h3>
+          <p>Websites, Digital Marketing, Design</p>
+        </div>
+        <div class="card" data-tags="websites design construction logos graphics">
+          <h3>Client Four</h3>
+          <p>Websites, Design</p>
+        </div>
+        <div class="card" data-tags="websites design automotive branding graphics">
+          <h3>Client Five</h3>
+          <p>Websites, Design</p>
+        </div>
+        <div class="card" data-tags="websites design logos branding graphics">
+          <h3>Client Six</h3>
+          <p>Websites, Design</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
