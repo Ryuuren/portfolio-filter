@@ -2,113 +2,350 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Filter</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="container">
       <div class="theTags">
-        <label>
-          <input type="checkbox" class="tag-checkbox show-all" value="all" /> Show All
-        </label>
-        <label>
-          <input type="checkbox" class="tag-checkbox" value="websites" />
-          Websites
-        </label>
-        <label>
-          <input type="checkbox" class="tag-checkbox" value="digital-marketing" />
-          Digital Marketing
-        </label>
-        <label> <input type="checkbox" class="tag-checkbox" value="design" /> Design </label>
+        <span>
+          <button class="tag-button" data-value="all">Show All</button>
+        </span>
+        <span>
+          <button class="tag-button" data-value="websites">Websites</button>
+        </span>
+        <span>
+          <button class="tag-button" data-value="digital-marketing">Digital Marketing</button>
+        </span>
+        <span>
+          <button class="tag-button" data-value="design">Design</button>
+        </span>
       </div>
-
-      <!-- Wrapper for conditional parent containers -->
-      <div class="conditional-parent-wrapper conditional-checkboxes-wrapper">
-        <div class="websites-checkboxes hidden">
-          <label>
-            <input type="checkbox" class="conditional-checkbox" value="ecommerce" />
-            Ecommerce
-          </label>
-          <label>
-            <input type="checkbox" class="conditional-checkbox" value="construction" />
-            Construction
-          </label>
-          <label>
-            <input type="checkbox" class="conditional-checkbox" value="automotive" />
-            Automotive
-          </label>
-        </div>
-
-        <div class="digital-marketing-checkboxes hidden">
-          <label>
-            <input type="checkbox" class="conditional-checkbox" value="seo" />
-            SEO
-          </label>
-          <label>
-            <input type="checkbox" class="conditional-checkbox" value="sem" />
-            SEM
-          </label>
-          <label>
-            <input type="checkbox" class="conditional-checkbox" value="smm" />
-            SMM
-          </label>
-        </div>
-
-        <div class="design-checkboxes hidden">
-          <label>
-            <input type="checkbox" class="conditional-checkbox" value="logos" />
-            Logos
-          </label>
-          <label>
-            <input type="checkbox" class="conditional-checkbox" value="branding" />
-            Branding
-          </label>
-          <label>
-            <input type="checkbox" class="conditional-checkbox" value="graphics" />
-            Graphics
-          </label>
-        </div>
+      <div class="conditional-parent-wrapper">
+        <div class="default-text">Filter By:</div>
+        <button class="conditional-button hidden websites-checkbox" data-value="automotive">
+          Automotive
+        </button>
+        <button class="conditional-button hidden websites-checkbox" data-value="auto-electrical">
+          Auto Electrical
+        </button>
+        <button class="conditional-button hidden websites-checkbox" data-value="business">
+          Business
+        </button>
+        <button class="conditional-button hidden websites-checkbox" data-value="construction">
+          Construction
+        </button>
+        <button class="conditional-button hidden websites-checkbox" data-value="ecommerce">
+          Ecommerce
+        </button>
+        <button class="conditional-button hidden websites-checkbox" data-value="flora-fauna">
+          Flora & Fauna
+        </button>
+        <button class="conditional-button hidden websites-checkbox" data-value="hair-beauty">
+          Hair & Beauty
+        </button>
+        <button class="conditional-button hidden websites-checkbox" data-value="health">
+          Health
+        </button>
+        <button class="conditional-button hidden websites-checkbox" data-value="hobby">
+          Hobby
+        </button>
+        <button class="conditional-button hidden websites-checkbox" data-value="law">Law</button>
+        <button class="conditional-button hidden websites-checkbox" data-value="marine">
+          Marine
+        </button>
+        <button class="conditional-button hidden websites-checkbox" data-value="real-estate">
+          Real Estate
+        </button>
+        <button class="conditional-button hidden websites-checkbox" data-value="small-business">
+          Small Business
+        </button>
+        <button class="conditional-button hidden websites-checkbox" data-value="trades">
+          Trades
+        </button>
+        <button
+          class="conditional-button hidden digital-marketing-checkbox"
+          data-value="blog-posts"
+        >
+          Blog Posts
+        </button>
+        <button
+          class="conditional-button hidden digital-marketing-checkbox"
+          data-value="copy-writing"
+        >
+          Copy Writing
+        </button>
+        <button
+          class="conditional-button hidden digital-marketing-checkbox"
+          data-value="google-ads"
+        >
+          Google Ads
+        </button>
+        <button
+          class="conditional-button hidden digital-marketing-checkbox"
+          data-value="google-my-business"
+        >
+          Google My Business
+        </button>
+        <button
+          class="conditional-button hidden digital-marketing-checkbox"
+          data-value="google-ranking"
+        >
+          Google Ranking
+        </button>
+        <button class="conditional-button hidden digital-marketing-checkbox" data-value="seo">
+          SEO
+        </button>
+        <button class="conditional-button hidden digital-marketing-checkbox" data-value="sem">
+          SEM
+        </button>
+        <button class="conditional-button hidden digital-marketing-checkbox" data-value="smm">
+          SMM
+        </button>
+        <button class="conditional-button hidden design-checkbox" data-value="branding">
+          Branding
+        </button>
+        <button class="conditional-button hidden design-checkbox" data-value="business-cards">
+          Business Cards
+        </button>
+        <button class="conditional-button hidden design-checkbox" data-value="document-design">
+          Document Design
+        </button>
+        <button class="conditional-button hidden design-checkbox" data-value="email-signature">
+          Email Signature
+        </button>
+        <button class="conditional-button hidden design-checkbox" data-value="logos">Logos</button>
+        <button class="conditional-button hidden design-checkbox" data-value="social-media">
+          Social Media
+        </button>
       </div>
-
-      <form class="form-inline">
-        <div class="form-group">
-          <label for="filterInput">Filter cards:</label>
-          <input type="text" class="form-control" id="filterInput" placeholder="filter" />
-          <button type="button" class="btn btn-clear">Clear</button>
-        </div>
-      </form>
       <div class="card-container">
-        <div class="card" data-tags="websites digital-marketing automotive seo">
+        <div
+          class="card card-1"
+          data-tags="websites digital-marketing design automotive auto-electrical business small-business seo blog-posts google-ranking copy-writing logos branding"
+        >
           <h3>Client One</h3>
-          <p>Websites, Digital Marketing</p>
-        </div>
-        <div class="card" data-tags="websites digital-marketing ecommerce sem">
-          <h3>Client Two</h3>
-          <p>Websites, Digital Marketing</p>
+          <h4>Websites, Digital Marketing, Design</h4>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus quam error
+            libero ex fugit eos placeat itaque esse iusto, aperiam pariatur fugiat sed expedita quas
+            quidem. Officia dignissimos beatae voluptates.
+          </p>
         </div>
         <div
-          class="card"
-          data-tags="websites digital-marketing design construction smm logos branding"
+          class="card card-2"
+          data-tags="websites digital-marketing ecommerce hair-beauty small-business health seo google-ranking"
+        >
+          <h3>Client Two</h3>
+          <h4>Websites, Digital Marketing</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, beatae iste commodi
+            debitis, voluptas doloribus ut vel ipsa facere doloremque officiis dicta mollitia fugiat
+            quidem repellat aut asperiores sunt nisi.
+          </p>
+        </div>
+        <div
+          class="card card-3"
+          data-tags="websites digital-marketing design construction business trades seo blog-posts google-ranking copy-writing logos branding social-media email-signature"
         >
           <h3>Client Three</h3>
-          <p>Websites, Digital Marketing, Design</p>
+          <h4>Websites, Digital Marketing, Design</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, beatae iste commodi
+            debitis, voluptas doloribus ut vel ipsa facere doloremque officiis dicta mollitia fugiat
+            quidem repellat aut asperiores sunt nisi.
+          </p>
         </div>
-        <div class="card" data-tags="websites design construction logos graphics">
+        <div
+          class="card card-4"
+          data-tags="websites design construction business trades logos branding social-media document-design"
+        >
           <h3>Client Four</h3>
-          <p>Websites, Design</p>
+          <h4>Websites, Design</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, beatae iste commodi
+            debitis, voluptas doloribus ut vel ipsa facere doloremque officiis dicta mollitia fugiat
+            quidem repellat aut asperiores sunt nisi.
+          </p>
         </div>
-        <div class="card" data-tags="websites design automotive branding graphics">
+        <div
+          class="card card-5"
+          data-tags="websites digital-marketing design business law small-business seo blog-posts google-ranking copy-writing google-ads sem logos branding social-media email-signature business-cards"
+        >
           <h3>Client Five</h3>
-          <p>Websites, Design</p>
+          <h4>Websites, Digital Marketing, Design</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, beatae iste commodi
+            debitis, voluptas doloribus ut vel ipsa facere doloremque officiis dicta mollitia fugiat
+            quidem repellat aut asperiores sunt nisi.
+          </p>
         </div>
-        <div class="card" data-tags="websites design logos branding graphics">
+        <div
+          class="card card-6"
+          data-tags="websites design trades business small-business logos branding social-media email-signature business-cards"
+        >
           <h3>Client Six</h3>
-          <p>Websites, Design</p>
+          <h4>Websites, Design</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, beatae iste commodi
+            debitis, voluptas doloribus ut vel ipsa facere doloremque officiis dicta mollitia fugiat
+            quidem repellat aut asperiores sunt nisi.
+          </p>
+        </div>
+        <div
+          class="card card-7"
+          data-tags="websites digital-marketing design health hair-beauty small-business ecommerce seo copy-writing google-ranking blog-posts smm logos branding social-media email-signature business-cards"
+        >
+          <h3>Client Seven</h3>
+          <h4>Websites, Digital Marketing, Design</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, beatae iste commodi
+            debitis, voluptas doloribus ut vel ipsa facere doloremque officiis dicta mollitia fugiat
+            quidem repellat aut asperiores sunt nisi.
+          </p>
+        </div>
+        <div class="card card-8" data-tags="websites design construction graphics">
+          <h3>Client Eight</h3>
+          <h4>Websites, Design</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, beatae iste commodi
+            debitis, voluptas doloribus ut vel ipsa facere doloremque officiis dicta mollitia fugiat
+            quidem repellat aut asperiores sunt nisi.
+          </p>
+        </div>
+        <div
+          class="card card-9"
+          data-tags="websites digital-marketing trades business small-business google-my-business"
+        >
+          <h3>Client Nine</h3>
+          <h4>Websites, Digital Marketing</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, beatae iste commodi
+            debitis, voluptas doloribus ut vel ipsa facere doloremque officiis dicta mollitia fugiat
+            quidem repellat aut asperiores sunt nisi.
+          </p>
+        </div>
+        <div
+          class="card card-10"
+          data-tags="websites digital-marketing design business trades small-business seo copy-writing google-ranking logos branding social-media business-cards"
+        >
+          <h3>Client Ten</h3>
+          <h4>Websites, Digital Marketing, Design</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, beatae iste commodi
+            debitis, voluptas doloribus ut vel ipsa facere doloremque officiis dicta mollitia fugiat
+            quidem repellat aut asperiores sunt nisi.
+          </p>
+        </div>
+        <div class="card card-11" data-tags="websites design construction business logos branding">
+          <h3>Client Eleven</h3>
+          <h4>Websites, Design</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, beatae iste commodi
+            debitis, voluptas doloribus ut vel ipsa facere doloremque officiis dicta mollitia fugiat
+            quidem repellat aut asperiores sunt nisi.
+          </p>
+        </div>
+        <div
+          class="card card-12"
+          data-tags="websites digital-marketing automotive auto-electrical business small-business seo copy-writing google-ranking blog-posts"
+        >
+          <h3>Client Twelve</h3>
+          <h4>Websites, Digital Marketing</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, beatae iste commodi
+            debitis, voluptas doloribus ut vel ipsa facere doloremque officiis dicta mollitia fugiat
+            quidem repellat aut asperiores sunt nisi.
+          </p>
+        </div>
+        <div
+          class="card card-13"
+          data-tags="websites design construction business trades logos branding"
+        >
+          <h3>Client Thirteen</h3>
+          <h4>Websites, Design</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, beatae iste commodi
+            debitis, voluptas doloribus ut vel ipsa facere doloremque officiis dicta mollitia fugiat
+            quidem repellat aut asperiores sunt nisi.
+          </p>
+        </div>
+        <div
+          class="card card-14"
+          data-tags="websites digital-marketing ecommerce hair-beauty small-business health seo copy-writing google-ranking blog-posts sem"
+        >
+          <h3>Client Fourteen</h3>
+          <h4>Websites, Digital Marketing</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, beatae iste commodi
+            debitis, voluptas doloribus ut vel ipsa facere doloremque officiis dicta mollitia fugiat
+            quidem repellat aut asperiores sunt nisi.
+          </p>
+        </div>
+        <div class="card card-15" data-tags="websites design business marine small-business logos">
+          <h3>Client Fifteen</h3>
+          <h4>Websites, Design</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, beatae iste commodi
+            debitis, voluptas doloribus ut vel ipsa facere doloremque officiis dicta mollitia fugiat
+            quidem repellat aut asperiores sunt nisi.
+          </p>
+        </div>
+        <div class="card card-16" data-tags="websites business marine">
+          <h3>Client Sixteen</h3>
+          <h4>Websites</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, beatae iste commodi
+            debitis, voluptas doloribus ut vel ipsa facere doloremque officiis dicta mollitia fugiat
+            quidem repellat aut asperiores sunt nisi.
+          </p>
+        </div>
+        <div class="card card-17" data-tags="websites construction logos">
+          <h3>Client Seventeen</h3>
+          <h4>Websites</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, beatae iste commodi
+            debitis, voluptas doloribus ut vel ipsa facere doloremque officiis dicta mollitia fugiat
+            quidem repellat aut asperiores sunt nisi.
+          </p>
+        </div>
+        <div
+          class="card card-18"
+          data-tags="websites digital-marketing design ecommerce flora-fauna small-business seo copy-writing google-ranking google-ads sem logos branding"
+        >
+          <h3>Client Eighteen</h3>
+          <h4>Websites, Digital Marketing, Design</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, beatae iste commodi
+            debitis, voluptas doloribus ut vel ipsa facere doloremque officiis dicta mollitia fugiat
+            quidem repellat aut asperiores sunt nisi.
+          </p>
+        </div>
+        <div
+          class="card card-19"
+          data-tags="websites digital-marketing automotive business small-business google-ranking"
+        >
+          <h3>Client Nineteen</h3>
+          <h4>Websites, Digital Marketing</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, beatae iste commodi
+            debitis, voluptas doloribus ut vel ipsa facere doloremque officiis dicta mollitia fugiat
+            quidem repellat aut asperiores sunt nisi.
+          </p>
+        </div>
+        <div
+          class="card card-20"
+          data-tags="websites digital-marketing business small-business hobby seo copy-writing google-ranking google-ads sem"
+        >
+          <h3>Client Twenty</h3>
+          <h4>Websites, Digital Marketing</h4>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, beatae iste commodi
+            debitis, voluptas doloribus ut vel ipsa facere doloremque officiis dicta mollitia fugiat
+            quidem repellat aut asperiores sunt nisi.
+          </p>
         </div>
       </div>
     </div>
+    <script src="script.js" defer></script>
   </body>
 </html>
